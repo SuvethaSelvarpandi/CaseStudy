@@ -62,7 +62,7 @@ create table incidents (
 -- 6. Table: evidence
 create table evidence (
     evidenceid int primary key,
-    description text,
+    description varchar(10000),
     locationfound varchar(100),
     incidentid int,
     foreign key (incidentid) references incidents(incidentid)
