@@ -1,0 +1,32 @@
+create database OrderDB;
+use OrderDB;
+-- USERS TABLE
+CREATE TABLE users (
+    user_id INT PRIMARY KEY,
+    username VARCHAR(50),
+    password VARCHAR(50),
+    role VARCHAR(20)
+);
+
+-- PRODUCTS TABLE
+CREATE TABLE products (
+    product_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    description TEXT,
+    price DOUBLE,
+    quantity INT,
+    type VARCHAR(50)
+);
+
+-- ORDERS TABLE
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    product_id INT,
+    quantity INT,
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+select * from users
+select * from products
+
